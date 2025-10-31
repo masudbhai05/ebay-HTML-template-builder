@@ -1,0 +1,66 @@
+@use '../utils' as *;
+/*----------------------------------------*/
+/*  1.2 Common Classes
+/*----------------------------------------*/
+
+
+.w-img {
+	& img {
+		width: 100%;
+	}
+}
+
+.m-img {
+	& img {
+		max-width: 100%;
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+.fix {
+	overflow: hidden
+}
+
+.clear {
+	clear: both;
+}
+
+
+.overflow-y-visible {
+	overflow-x: hidden;
+	overflow-y: visible;
+}
+
+.overflow-x-visible {
+	overflow-x: visible;
+	overflow-y: hidden;
+}
+
+.p-relative {
+	position: relative;
+}
+
+.p-absolute {
+	position: absolute;
+}
+
+.bttn {
+	color: #fff;
+	padding: 10px 15px;
+	background-color: var(--button-color);
+	border-radius: 10px;
+
+	&-white {
+		background-color: var(--button-white-color);
+		color: var(--button-color);
+		padding: 10px 15px;
+		border-radius: 10px;
+	}
+}
+
+.border-15{
+border-radius: 15px;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/quill.snow.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" href="/assets/img/Favicon.png">
+    <title>eBay HTML Template Builder</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="container-fluid">
+            <div class="header d-flex justify-content-between align-items-center">
+                <div class="logo">
+                    <img src="assets/img/ebay-logo.png" alt="">
+                </div>
+                <div class="nav-menu">
+                    <div class="buttons">
+                        <button class="bttn ml-10"><i class="fal fa-eye"></i> Preview</button>
+                        <button class="bttn-white ml-10"><i class="fal fa-copy"></i> Code</button>
+                        <button class="bttn-white ml-10"><i class="fal fa-download"></i> HTML</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-layout p-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2 gx-0">
+                        <aside>
+                            <div class="sidebar">
+                                <ul>
+                                    <li><a href="#"><i class="fal fa-home-lg-alt mr-8"></i> Home</a></li>
+                                    <li><a href="#"><i class="fal fa-book-open mr-8"></i> Documentation</a></li>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="col-md-10 gx-0">
+                        <div class="main-container p-absolute">
+                            <div class="hero-container mb-30">
+                                <div class="mb-3">
+                                    <label for="main-title" class="form-label">Title</label>
+                                    <input type="text" class="form-control" id="main-title">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="specification" class="form-label">Specification</label>
+                                    <textarea class="form-control" id="specification" rows="5"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="main-title" class="form-label">SKU</label>
+                                            <input type="text" class="form-control" id="sku">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="main-title" class="form-label">Vendor</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Select...</option>
+                                                <option value="1">Rain Bird</option>
+                                                <option value="2">Hunter</option>
+                                                <option value="3">Zurn Wilkins</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="main-title" class="form-label">Condition</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Select...</option>
+                                                <option value="1">New</option>
+                                                <option value="2">Refurbished</option>
+                                                <option value="3">Used</option>
+                                                <option value="3">Unbox</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hero-container">
+                                <div class="mb-3">
+                                    <label for="main-title" class="form-label">Title</label>
+                                    <input type="text" class="form-control" id="main-title">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="specification" class="form-label">Overview</label>
+                                    <!-- Toolbar -->
+                                    <div id="toolbar">
+                                        <select class="ql-font"></select>
+                                        <select class="ql-size"></select>
+                                        <button class="ql-bold"></button>
+                                        <button class="ql-italic"></button>
+                                        <button class="ql-underline"></button>
+                                        <button class="ql-color"></button>
+                                        <button class="ql-background"></button>
+                                        <button class="ql-align" value=""></button>
+                                        <button class="ql-align" value="center"></button>
+                                        <button class="ql-align" value="right"></button>
+                                        <button class="ql-list" value="ordered"></button>
+                                        <button class="ql-list" value="bullet"></button>
+                                    </div>
+
+                                    <!-- Editor -->
+                                    <div id="editor-container" class=""></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/quill.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
