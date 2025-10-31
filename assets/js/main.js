@@ -38,12 +38,67 @@
         $(this).css("color", $(this).attr("data-color"))
     })
 
-     // Initialize Quill Editor
-    const quill = new Quill('#editor-container', {
-      modules: {
-        toolbar: '#toolbar'
-      },
-      theme: 'snow'
-    });
+    // ----------------------Overview Quill Editor--------------------
+    const toolbarOptionsOverview = [
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        ['bold', 'italic', 'underline', 'strike'],     
+        [{ 'color': ['#000', '#f15208ff', '#89ec07ff'] }, { 'background': ['#000', '#f15208ff', '#89ec07ff'] }], 
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'list': 'check' }],
+        [{ 'script': 'sub' }, { 'script': 'super' }],     
+        [{ 'align': [] }],
+        ['clean']                                       
+    ];
+    const optionsOverview = {
+        debug: 'info',
+        modules: {
+            toolbar: toolbarOptionsOverview,
+        },
+        placeholder: 'Write a product overview...',
+        theme: 'snow'
+    };
+    const overviewEditor = new Quill('#overview-editor', optionsOverview)
+    // overviewEditor.enable(false);
+
+    // ------------------Label Quill Editor-------------------
+    const toolbarOptionsLabel = [
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        ['bold', 'italic', 'underline', 'strike'],     
+        [{ 'color': ['#000', '#f15208ff', '#89ec07ff'] }, { 'background': ['#000', '#f15208ff', '#89ec07ff'] }], 
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'list': 'check' }],
+        [{ 'script': 'sub' }, { 'script': 'super' }],     
+        [{ 'align': [] }],
+        ['clean']                                       
+    ];
+    const optionsLabel = {
+        debug: 'info',
+        modules: {
+            toolbar: toolbarOptionsLabel,
+        },
+        placeholder: 'Write a label about product...',
+        theme: 'snow'
+    };
+    const LabelEditor = new Quill('#label-editor', optionsLabel)
+    // LabelEditor.enable(false);
+
+    // ------------------Label Quill Editor-------------------
+    const toolbarOptionsWarranty = [
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        ['bold', 'italic', 'underline', 'strike'],     
+        [{ 'color': ['#000', '#f15208ff', '#89ec07ff'] }, { 'background': ['#000', '#f15208ff', '#89ec07ff'] }], 
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'list': 'check' }],
+        [{ 'script': 'sub' }, { 'script': 'super' }],     
+        [{ 'align': [] }],
+        ['clean']                                       
+    ];
+    const optionsWarranty = {
+        debug: 'info',
+        modules: {
+            toolbar: toolbarOptionsWarranty,
+        },
+        placeholder: 'Write a Warranty about product...',
+        theme: 'snow'
+    };
+    const WarrantyEditor = new Quill('#warranty-editor', optionsWarranty)
+    // WarrantyEditor.enable(false);
 
 })(jQuery)

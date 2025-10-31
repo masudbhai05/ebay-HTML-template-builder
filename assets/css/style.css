@@ -75,7 +75,7 @@
 /*----------------------------------------*/
 /*  1.1 Theme Default
 /*----------------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Federo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 :root {
   --nav-top: 90px;
   --sidebar-width: 302px;
@@ -91,9 +91,8 @@
 }
 
 :root {
-  --tp-font-heading: "Federo", sans-serif;
-  --tp-font-body: "DM Sans", sans-serif;
-  --tp-font-flaticon: "flaticon";
+  --tp-font-heading: "Inter", sans-serif;
+  --tp-font-body: "Inter", sans-serif;
 }
 
 * {
@@ -353,6 +352,10 @@ img {
   color: var(--button-color);
   padding: 10px 15px;
   border-radius: 10px;
+}
+
+.thin-btn {
+  padding: 6px 15px;
 }
 
 .border-15 {
@@ -4303,6 +4306,7 @@ img {
   left: 0;
   right: 0;
   z-index: 2;
+  box-shadow: 2px 2px 29px rgba(202, 202, 202, 0.3);
 }
 
 .sidebar {
@@ -4334,6 +4338,19 @@ img {
 
 .title {
   font-size: 100px;
+}
+
+.ql-toolbar {
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  border-color: var(--input-border-color) !important;
+}
+
+.ql-container {
+  border-bottom-left-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+  border-color: var(--input-border-color) !important;
+  min-height: 100px;
 }
 
 .main-container {
