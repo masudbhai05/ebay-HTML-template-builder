@@ -22,7 +22,7 @@
                 </div>
                 <div class="nav-menu">
                     <div class="buttons">
-                        <button class="bttn ml-10"><i class="fal fa-eye"></i> Preview</button>
+                        <button id="previewBtn" class="bttn ml-10"><i class="fal fa-eye"></i> Preview</button>
                         <button class="bttn-white ml-10"><i class="fal fa-copy"></i> Code</button>
                         <button class="bttn-white ml-10"><i class="fal fa-download"></i> HTML</button>
                     </div>
@@ -93,7 +93,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="specification" class="form-label">Information</label>
-                                   <div id="overview-editor" class="overview-editor"></div>
+                                    <div id="overview-editor" class="overview-editor"></div>
                                 </div>
                             </div>
 
@@ -106,35 +106,58 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="specification" class="form-label">Information</label>
-                                   <div id="label-editor" class="label-editor"></div>
+                                    <div id="label-editor" class="label-editor"></div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="main-title" class="form-label">Section Image URL</label>
                                     <div class="update d-flex justify-content-between align-items-center">
                                         <input type="text" class="form-control" id="Section Image URL">
-                                         <button class="bttn thin-btn ml-10">Edit</button>
-                                         <button class="bttn-white thin-btn ml-10">Update</button>
+                                        <button class="bttn thin-btn ml-10">Edit</button>
+                                        <button class="bttn-white thin-btn ml-10">Update</button>
                                     </div>
                                 </div>
                             </div>
 
                             <!--------------- What about the warranty -------------->
                             <div class="hero-container">
-                                <h4 class="mb-8">What about the warranty</h4>
+                                <h4 class="mb-8">Our Promise</h4>
                                 <div class="mb-3">
-                                    <label for="main-title" class="form-label">warranty Heading</label>
+                                    <label for="main-title" class="form-label">Promise Heading</label>
                                     <input type="text" class="form-control" id="warranty-heading">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="specification" class="form-label">Information</label>
-                                   <div id="warranty-editor" class="label-editor"></div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="main-title" class="form-label">Section Image URL</label>
                                     <div class="update d-flex justify-content-between align-items-center">
                                         <input type="text" class="form-control" id="Section Image URL">
-                                         <button class="bttn thin-btn ml-10">Edit</button>
-                                         <button class="bttn-white thin-btn ml-10">Update</button>
+                                        <button class="bttn thin-btn ml-10">Edit</button>
+                                        <button class="bttn-white thin-btn ml-10">Update</button>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="specification" class="form-label">Information</label>
+                                    <div id="promise-editor" class="promise-editor"></div>
+                                </div>
+                                <div class="text-end mb-3">
+                                    <button class="bttn thin-btn"><i class="fal fa-plus"></i> Add Promise</button>
+                                </div>
+                            </div>
+                            <!--------------- What about the warranty -------------->
+                            <div class="hero-container">
+                                <h4 class="mb-8">What about the warranty</h4>
+                                <div class="mb-3">
+                                    <label for="main-title" class="form-label">Warranty Heading</label>
+                                    <input type="text" class="form-control" id="warranty-heading">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="specification" class="form-label">Information</label>
+                                    <div id="warranty-editor" class="label-editor"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="main-title" class="form-label">Section Image URL</label>
+                                    <div class="update d-flex justify-content-between align-items-center">
+                                        <input type="text" class="form-control" id="Section Image URL">
+                                        <button class="bttn thin-btn ml-10">Edit</button>
+                                        <button class="bttn-white thin-btn ml-10">Update</button>
                                     </div>
                                 </div>
                             </div>
@@ -156,6 +179,7 @@
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/quill.js"></script>
+    <script src="templates/datorpro-template.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 

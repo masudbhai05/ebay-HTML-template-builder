@@ -3,10 +3,6 @@
 
     var windowOn = $(window);
     // wow
-    windowOn.on('load', function () {
-        wowAnimation();
-    });
-
     // preloader 
     windowOn.on('load', function () {
         $("#loading").fadeOut(500);
@@ -80,6 +76,27 @@
     const LabelEditor = new Quill('#label-editor', optionsLabel)
     // LabelEditor.enable(false);
 
+    // ------------------Promise Quill Editor-------------------
+    const toolbarOptionsPromise = [
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        ['bold', 'italic', 'underline', 'strike'],     
+        [{ 'color': ['#000', '#f15208ff', '#89ec07ff'] }, { 'background': ['#000', '#f15208ff', '#89ec07ff'] }], 
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'list': 'check' }],
+        [{ 'script': 'sub' }, { 'script': 'super' }],     
+        [{ 'align': [] }],
+        ['clean']                                       
+    ];
+    const optionsPromise = {
+        debug: 'info',
+        modules: {
+            toolbar: toolbarOptionsPromise,
+        },
+        placeholder: 'Write a Warranty about product...',
+        theme: 'snow'
+    };
+    const promiseEditor = new Quill('#promise-editor', optionsPromise)
+    // WarrantyEditor.enable(false);
+
     // ------------------Label Quill Editor-------------------
     const toolbarOptionsWarranty = [
         [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
@@ -100,5 +117,18 @@
     };
     const WarrantyEditor = new Quill('#warranty-editor', optionsWarranty)
     // WarrantyEditor.enable(false);
+
+   document.getElementById('previewBtn').addEventListener('click', async () => {
+    const title = document.querySelector('#main-title').value;
+    const specs = document.querySelector('#specification').value.split(',');
+       
+    const htmlContent = await ebayTempate(title, specs);
+
+    const previewWindow = window.open('', '_blank');
+    previewWindow.document.write(htmlContent);
+    previewWindow.document.close();
+});
+
+
 
 })(jQuery)
