@@ -362,6 +362,11 @@ img {
   border-radius: 15px;
 }
 
+.resetBtn {
+  background: none;
+  color: #0381f7;
+}
+
 /*----------------------------------------*/
 /*  1.3 Default Spacing
 /*----------------------------------------*/

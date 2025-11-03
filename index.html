@@ -53,32 +53,33 @@
                                     <input type="text" class="form-control" id="main-title">
                                 </div>
                                 <div class="mb-3">
+                                    <label for="product-imageiURL" class="form-label">Product Image URL</label>
+                                    <div class="update d-flex justify-content-between align-items-center">
+                                        <input type="text" class="form-control" id="product-imageiURL">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
                                     <label for="specification" class="form-label">Specification</label>
                                     <textarea class="form-control" id="specification" rows="5"></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <label for="main-title" class="form-label">SKU</label>
+                                            <label for="sku" class="form-label">SKU</label>
                                             <input type="text" class="form-control" id="sku">
                                         </div>
                                         <div class="col-md-4">
-                                            <label for="main-title" class="form-label">Vendor</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Select...</option>
-                                                <option value="1">Rain Bird</option>
-                                                <option value="2">Hunter</option>
-                                                <option value="3">Zurn Wilkins</option>
-                                            </select>
+                                            <label for="vendor" class="form-label">Vendor</label>
+                                            <input type="text" class="form-control" id="vendor">
                                         </div>
                                         <div class="col-md-4">
-                                            <label for="main-title" class="form-label">Condition</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Select...</option>
-                                                <option value="1">New</option>
-                                                <option value="2">Refurbished</option>
-                                                <option value="3">Used</option>
-                                                <option value="3">Unbox</option>
+                                            <label for="condition" class="form-label">Condition</label>
+                                            <select id="condition" class="form-select"
+                                                aria-label="Default select example">
+                                                <option selected value="New">New</option>
+                                                <option value="Refurbished">Refurbished</option>
+                                                <option value="Used">Used</option>
+                                                <option value="Unboxed">Unboxed</option>
                                             </select>
                                         </div>
                                     </div>
@@ -88,12 +89,12 @@
                             <div class="hero-container">
                                 <h4 class="mb-8">Overview</h4>
                                 <div class="mb-3">
-                                    <label for="main-title" class="form-label">Overview Heading</label>
-                                    <input type="text" class="form-control" id="overview-heading">
+                                    <label for="overview-heading" class="form-label">Overview Heading</label>
+                                    <input type="text" class="form-control" id="overview-heading" value="Overview">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="specification" class="form-label">Information</label>
-                                    <div id="overview-editor" class="overview-editor"></div>
+                                    <label for="overview-editor" class="form-label">Information</label>
+                                    <div id="overview-editor" class="editor"></div>
                                 </div>
                             </div>
 
@@ -102,23 +103,55 @@
                                 <h4 class="mb-8">Label Information</h4>
                                 <div class="mb-3">
                                     <label for="main-title" class="form-label">Label Heading</label>
-                                    <input type="text" class="form-control" id="label-heading">
+                                    <input type="text" class="form-control" id="label-heading"
+                                        value="Why doesn't my item have a label or sticker?">
                                 </div>
                                 <div class="mb-3">
                                     <label for="specification" class="form-label">Information</label>
                                     <div id="label-editor" class="label-editor"></div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="main-title" class="form-label">Section Image URL</label>
                                     <div class="update d-flex justify-content-between align-items-center">
-                                        <input type="text" class="form-control" id="Section Image URL">
-                                        <button class="bttn thin-btn ml-10">Edit</button>
-                                        <button class="bttn-white thin-btn ml-10">Update</button>
+                                        <button id="resetLabelBtn" class="resetBtn">Reset to Default</button>
+                                        <div>
+                                            <button class="bttn thin-btn ml-10">Edit</button>
+                                            <button class="bttn-white thin-btn ml-10">Update</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!--------------- What about the warranty -------------->
+                            <!--------------- Return & Refund policy Information -------------->
+                            <div class="hero-container">
+                                <h4 class="mb-8">Return & Refund policy</h4>
+                                <div class="mb-3">
+                                    <label for="main-title" class="form-label">Return & Refund Heading</label>
+                                    <input type="text" class="form-control" id="return-heading"
+                                        value="Return & Refund policy">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="main-title" class="form-label">Section Image URL</label>
+                                    <div class="update d-flex justify-content-between align-items-center">
+                                        <input type="text" class="form-control" id="returnImageURL"
+                                            value="https://i.postimg.cc/K8th1ZBZ/OBJECTS.png">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="specification" class="form-label">Information</label>
+                                    <div id="return-editor" class="return-editor"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="update d-flex justify-content-between align-items-center">
+                                        <button id="resetReturnBtn" class="resetBtn">Reset to Default</button>
+                                        <div>
+                                            <button class="bttn thin-btn ml-10">Edit</button>
+                                            <button class="bttn-white thin-btn ml-10">Update</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--------------- What about the Promise -------------->
                             <div class="hero-container">
                                 <h4 class="mb-8">Our Promise</h4>
                                 <div class="mb-3">
@@ -129,16 +162,18 @@
                                     <label for="main-title" class="form-label">Section Image URL</label>
                                     <div class="update d-flex justify-content-between align-items-center">
                                         <input type="text" class="form-control" id="Section Image URL">
-                                        <button class="bttn thin-btn ml-10">Edit</button>
-                                        <button class="bttn-white thin-btn ml-10">Update</button>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="specification" class="form-label">Information</label>
                                     <div id="promise-editor" class="promise-editor"></div>
                                 </div>
-                                <div class="text-end mb-3">
+                                <div class="mb-3 d-flex justify-content-between align-items-center">
                                     <button class="bttn thin-btn"><i class="fal fa-plus"></i> Add Promise</button>
+                                    <div>
+                                        <button class="bttn thin-btn ml-10">Edit</button>
+                                        <button class="bttn-white thin-btn ml-10">Update</button>
+                                    </div>
                                 </div>
                             </div>
                             <!--------------- What about the warranty -------------->
@@ -154,10 +189,15 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="main-title" class="form-label">Section Image URL</label>
+                                    <input type="text" class="form-control" id="Section Image URL">
+                                </div>
+                                <div class="mb-3">
                                     <div class="update d-flex justify-content-between align-items-center">
-                                        <input type="text" class="form-control" id="Section Image URL">
-                                        <button class="bttn thin-btn ml-10">Edit</button>
-                                        <button class="bttn-white thin-btn ml-10">Update</button>
+                                        <button id="resetLabelBtn">Reset to Default</button>
+                                        <div>
+                                            <button class="bttn thin-btn ml-10">Edit</button>
+                                            <button class="bttn-white thin-btn ml-10">Update</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

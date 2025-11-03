@@ -1,8 +1,9 @@
 
-const  ebayTempate = async (title, specs) => {
-
-     const response = await fetch("/templates/datorpro-teplate.css");
-     const css = await response.text();
+const ebayTempate = async (
+    title, vendor, sku, specs, productImage, selectedCondition, overviewHeading, overviewContent, labelHeading, labelContent, returnHeading, retuncontent, returnImageURL
+) => {
+    const response = await fetch("/templates/datorpro-teplate.css");
+    const css = await response.text();
 
 
     return `
@@ -52,12 +53,15 @@ const  ebayTempate = async (title, specs) => {
                 <div class="col-md-6">
                     <section class="gallery">
                         <img alt="" class="gallery-img"
-                            src="https://makemyyard.com/cdn/shop/files/198291-1.de9d360a.jpg?v=1736948338&amp;width=600">
+                            src=${productImage}>
                     </section>
                 </div>
                 <div class="col-md-6 product-content">
-                    <h3><span class="badge bg-primary fw-normal">New</span></h3>
+                    <h3><span class="badge bg-primary fw-normal">${selectedCondition || 'New'}</span></h3>
                     <h1>${title}</h1>
+                     <div class="vendor-SKU d-flex align-items-center">
+                        <p>${vendor} : </p> <span>${sku}</span>
+                    </div>
                     <div class="d-flex">
                         <div class="features w-50 text-start">
                             <h4 class="features-tilte ">Specs</h4>
@@ -82,60 +86,12 @@ const  ebayTempate = async (title, specs) => {
                 <div class="col-12">
                     <div class="tab-wrapper mb-40">
                         <div class="row">
-
                             <div class="col-12">
                                 <div class="tabset">
-
                                     <section id="Overview">
-                                        <h4 class="overview-heading">Overview</h4>
-
-                                        <h5 class="fw-bold mb-3">Product Details</h5>
-                                        <ul class="overview-content">
-                                            <li><strong>Item:</strong> Reduced Pressure Principle Assembly</li>
-                                            <li><strong>Model:</strong> 1-975XL2</li>
-                                            <li><strong>Size:</strong> 1 inch</li>
-                                            <li><strong>Connection:</strong> FNPT with Ball Valve</li>
-                                            <li><strong>Material:</strong> Lead-Free Cast Bronze</li>
-                                            <li><strong>Brand Name:</strong> Wilkins</li>
-                                        </ul>
-
-                                        <h5 class="fw-bold mb-3">Key Features</h5>
-                                        <ul class="overview-content">
-                                            <li><strong>Durable Construction:</strong> Built with lead-free cast
-                                                bronze for reliable and long-lasting use.</li>
-                                            <li><strong>Compact Design:</strong> Features a smaller footprint for
-                                                easier installation in tight spaces.</li>
-                                            <li><strong>Integrated Ball Valves:</strong> Facilitates quick and
-                                                efficient shutoff for maintenance or testing.</li>
-                                            <li><strong>Advanced Backflow Protection:</strong> Designed to prevent
-                                                water contamination in both residential and commercial applications.
-                                            </li>
-                                            <li><strong>Reliable Performance:</strong> Withstands pressure up to 175
-                                                PSI and water temperatures ranging from 33°F to 140°F.</li>
-                                        </ul>
-
-                                        <h5 class="fw-bold mb-3">Specifications</h5>
-                                        <ul class="overview-content">
-                                            <li><strong>Model:</strong> 1-975XL2</li>
-                                            <li><strong>Size:</strong> 1 inch</li>
-                                            <li><strong>Connection Type:</strong> FNPT with Ball Valve</li>
-                                            <li><strong>Material:</strong> Lead-Free Cast Bronze</li>
-                                            <li><strong>Pressure Rating:</strong> Up to 175 PSI</li>
-                                            <li><strong>Temperature Range:</strong> 33°F to 140°F</li>
-                                            <li><strong>Certification:</strong> Meets lead-free compliance standards
-                                            </li>
-                                        </ul>
-
-                                        <h5 class="fw-bold mb-3">Applications</h5>
-                                        <ul class="overview-content">
-                                            <li>Suitable for residential and commercial water systems</li>
-                                            <li>Ideal for irrigation systems and potable water safety</li>
-                                            <li>Effective in preventing backflow contamination</li>
-                                        </ul>
+                                        <h4 class="overview-heading">${overviewHeading}</h4>
+                                        ${overviewContent}
                                     </section>
-
-
-
                                 </div>
                             </div>
                         </div>
@@ -143,19 +99,9 @@ const  ebayTempate = async (title, specs) => {
                     <div class="tab-wrapper">
                         <div class="tabset">
                             <section id="Overview">
-                                <h4 class="overview-heading">Why doesn't my item have a label or sticker? </h4>
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <p>
-                                            All of our products, including sprinkler heads and other irrigation
-                                            components, come directly from the manufacturer’s authorized
-                                            distribution channels. Items distributed for retail display often
-                                            include labels or stickers, but products sourced through these direct
-                                            channels typically do not. This allows us to offer the same high-quality
-                                            items at lower, more affordable prices for our customers. Rest assured,
-                                            all items are genuine and meet the highest industry standards.
-                                        </p>
-                                    </div>
+                                <h4 class="overview-heading">${labelHeading}</h4>
+                                <div>
+                                ${labelContent}
                                 </div>
                             </section>
                         </div>
@@ -166,17 +112,13 @@ const  ebayTempate = async (title, specs) => {
 
                                 <div class="row">
                                     <div class="col-md-8">
-                                        <h4 class="overview-heading">Return &amp; Refund policy</h4>
-                                        <p>We aim for your complete satisfaction with a generous <strong>30-day
-                                                return</strong>
-                                            window at no cost to you. For a smooth process,
-                                            please ensure returned items are in their original shipped condition,
-                                            including all packaging and accessories. Items not
-                                            meeting this requirement may be subject to a restocking fee.
-                                        </p>
+                                        <h4 class="overview-heading">${returnHeading}</h4>
+                                        <div>
+                                             ${retuncontent}
+                                        </div>
                                     </div>
                                     <div class="col-md-4  ">
-                                        <img class="float-end" src="https://i.postimg.cc/K8th1ZBZ/OBJECTS.png" alt="">
+                                        <img class="float-end" src="${returnImageURL}" alt="">
                                     </div>
                                 </div>
                             </section>
