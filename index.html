@@ -23,8 +23,8 @@
                 <div class="nav-menu">
                     <div class="buttons">
                         <button id="previewBtn" class="bttn ml-10"><i class="fal fa-eye"></i> Preview</button>
-                        <button class="bttn-white ml-10"><i class="fal fa-copy"></i> Code</button>
-                        <button class="bttn-white ml-10"><i class="fal fa-download"></i> HTML</button>
+                        <button id="copyBtn" class="bttn-white ml-10"><i class="fal fa-copy"></i> Code</button>
+                        <button id="downloadBtn" class="bttn-white ml-10"><i class="fal fa-download"></i> HTML</button>
                     </div>
                 </div>
             </div>
@@ -113,10 +113,10 @@
                                 <div class="mb-3">
                                     <div class="update d-flex justify-content-between align-items-center">
                                         <button id="resetLabelBtn" class="resetBtn">Reset to Default</button>
-                                        <div>
+                                        <!-- <div>
                                             <button class="bttn thin-btn ml-10">Edit</button>
                                             <button class="bttn-white thin-btn ml-10">Update</button>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -125,7 +125,7 @@
                             <div class="hero-container">
                                 <h4 class="mb-8">Return & Refund policy</h4>
                                 <div class="mb-3">
-                                    <label for="main-title" class="form-label">Return & Refund Heading</label>
+                                    <label for="main-title" class="form-label">Return Heading</label>
                                     <input type="text" class="form-control" id="return-heading"
                                         value="Return & Refund policy">
                                 </div>
@@ -143,10 +143,10 @@
                                 <div class="mb-3">
                                     <div class="update d-flex justify-content-between align-items-center">
                                         <button id="resetReturnBtn" class="resetBtn">Reset to Default</button>
-                                        <div>
+                                        <!-- <div>
                                             <button class="bttn thin-btn ml-10">Edit</button>
                                             <button class="bttn-white thin-btn ml-10">Update</button>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -156,12 +156,13 @@
                                 <h4 class="mb-8">Our Promise</h4>
                                 <div class="mb-3">
                                     <label for="main-title" class="form-label">Promise Heading</label>
-                                    <input type="text" class="form-control" id="warranty-heading">
+                                    <input type="text" class="form-control" id="promise-heading" value="Our promise">
                                 </div>
                                 <div class="mb-3">
                                     <label for="main-title" class="form-label">Section Image URL</label>
                                     <div class="update d-flex justify-content-between align-items-center">
-                                        <input type="text" class="form-control" id="Section Image URL">
+                                        <input type="text" class="form-control" id="promiseImageURL"
+                                            value="https://i.postimg.cc/fTnPmWkr/promiss.png">
                                     </div>
                                 </div>
                                 <div class="mb-3">
@@ -169,11 +170,11 @@
                                     <div id="promise-editor" class="promise-editor"></div>
                                 </div>
                                 <div class="mb-3 d-flex justify-content-between align-items-center">
-                                    <button class="bttn thin-btn"><i class="fal fa-plus"></i> Add Promise</button>
-                                    <div>
+                                    <button id="promiseReturnBtn" class="resetBtn">Reset to Default</button>
+                                    <!-- <div>
                                         <button class="bttn thin-btn ml-10">Edit</button>
                                         <button class="bttn-white thin-btn ml-10">Update</button>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <!--------------- What about the warranty -------------->
@@ -181,23 +182,25 @@
                                 <h4 class="mb-8">What about the warranty</h4>
                                 <div class="mb-3">
                                     <label for="main-title" class="form-label">Warranty Heading</label>
-                                    <input type="text" class="form-control" id="warranty-heading">
+                                    <input type="text" class="form-control" id="warranty-heading"
+                                        value="What about the warranty?">
                                 </div>
                                 <div class="mb-3">
                                     <label for="specification" class="form-label">Information</label>
-                                    <div id="warranty-editor" class="label-editor"></div>
+                                    <div id="warranty-editor" class="warranty-editor"></div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="main-title" class="form-label">Section Image URL</label>
-                                    <input type="text" class="form-control" id="Section Image URL">
+                                    <input type="text" class="form-control" id="warrantyImageURL"
+                                        value="https://i.postimg.cc/DzdytC73/warrenty.png">
                                 </div>
                                 <div class="mb-3">
                                     <div class="update d-flex justify-content-between align-items-center">
-                                        <button id="resetLabelBtn">Reset to Default</button>
-                                        <div>
+                                        <button id="resetWarrantyBtn" class="resetBtn">Reset to Default</button>
+                                        <!-- <div>
                                             <button class="bttn thin-btn ml-10">Edit</button>
                                             <button class="bttn-white thin-btn ml-10">Update</button>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>

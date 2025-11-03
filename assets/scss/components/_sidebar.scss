@@ -18,11 +18,13 @@
             flex-direction: column-reverse;
             & a{
                 display: block;
+                color: #fff;
                 padding: 10px;
                 border-radius: 10px;
                 transition: all 0.3s;
                 &:hover{
                      background-color: #fff;
+                     color: var(--sidebar-text-color);
                 }
             }
         }

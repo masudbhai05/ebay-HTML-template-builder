@@ -1,9 +1,31 @@
 
 const ebayTempate = async (
-    title, vendor, sku, specs, productImage, selectedCondition, overviewHeading, overviewContent, labelHeading, labelContent, returnHeading, retuncontent, returnImageURL
+    title, vendor, sku, specs, productImage, selectedCondition, overviewHeading, overviewContent, labelHeading, labelContent, returnHeading, retuncontent, returnImageURL, warrantyHeading, warrantyImageURL, warrantycontent, promiseHeading, promiseImageURL, promiseContent
 ) => {
     const response = await fetch("/templates/datorpro-teplate.css");
     const css = await response.text();
+
+    // Temporary div তৈরি করি যাতে HTML ধরতে পারি
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = promiseContent;
+
+    const paragraphs = tempDiv.querySelectorAll('p');
+    if (paragraphs.length === 0) return ''; // কিছু না থাকলে খালি ফেরত দেবে
+
+    let tableRows = '';
+    paragraphs.forEach(p => {
+        const text = p.innerHTML.trim();
+        if (text) {
+            tableRows += `
+                <tr>
+                    <td class="tick">
+                        <img src="https://i.postimg.cc/cHJ25Mmg/check.png" alt="">
+                    </td>
+                    <td><p>${text}</p></td>
+                </tr>
+            `;
+        }
+    });
 
 
     return `
@@ -130,79 +152,17 @@ const ebayTempate = async (
 
                                 <div class="row">
                                     <div class="col-md-8">
-                                        <h4 class="overview-heading">Our promise</h4>
+                                        <h4 class="overview-heading">${promiseHeading}</h4>
                                         <div class="promiss-content">
                                             <table>
                                                 <tbody>
-                                                    <tr>
-                                                        <td class="tick"><img
-                                                                src="https://i.postimg.cc/cHJ25Mmg/check.png" alt="">
-                                                        </td>
-                                                        <td>
-                                                            <p>
-                                                                Ensuring your satisfaction is our top priority.
-                                                                Orders
-                                                                made
-                                                                by <strong>2 PM
-                                                                    EST</strong> will be shipped the same day, and
-                                                                all
-                                                                other
-                                                                items will be shipped within <strong>ONE BUSINESS
-                                                                    day</strong>.
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="tick"><img
-                                                                src="https://i.postimg.cc/cHJ25Mmg/check.png" alt="">
-                                                        </td>
-                                                        <td>
-                                                            <p>Some items are sourced from the manufacturer and may
-                                                                take <strong>5 to 7 business days
-
-                                                                </strong>
-                                                                to ship. Please check the <strong>handling
-                                                                    time</strong> and <strong>delivery date</strong>
-                                                                at checkout.
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="tick"><img
-                                                                src="https://i.postimg.cc/cHJ25Mmg/check.png" alt="">
-                                                        </td>
-                                                        <td>
-                                                            <p>
-                                                                Each item undergoes rigorous professional testing to
-                                                                meet
-                                                                our strict
-                                                                quality standards.
-
-
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="tick"><img
-                                                                src="https://i.postimg.cc/cHJ25Mmg/check.png" alt="">
-                                                        </td>
-                                                        <td>
-                                                            <p>Our dedicated team is available to assist you
-                                                                promptly.
-                                                                We
-                                                                aim to
-                                                                respond to all messages within <strong>24
-                                                                    hours</strong>.
-
-                                                            </p>
-                                                        </td>
-                                                    </tr>
+                                                   ${tableRows} 
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <img class="float-end" src="https://i.postimg.cc/fTnPmWkr/promiss.png" alt="">
+                                        <img class="float-end" src="${promiseImageURL}" alt="">
                                     </div>
                                 </div>
                             </section>
@@ -214,14 +174,13 @@ const ebayTempate = async (
 
                                 <div class="row">
                                     <div class="col-md-8">
-                                        <h4 class="overview-heading">What about the warranty?</h4>
-                                        <p>All items come with a 30-day DOA warranty. Please note, the warranty does
-                                            not cover damages due to misuse, such as water
-                                            exposure or buyer's remorse.
-                                        </p>
+                                        <h4 class="overview-heading">${warrantyHeading}</h4>
+                                        <div>
+                                            ${warrantycontent}                                        
+                                        </div>
                                     </div>
                                     <div class="col-md-4  ">
-                                        <img class="float-end" src="https://i.postimg.cc/DzdytC73/warrenty.png" alt="">
+                                        <img class="float-end" src="${warrantyImageURL}" alt="">
                                     </div>
                                 </div>
                             </section>
